@@ -101,7 +101,12 @@ TinyPortal:
 -   Wi-Fi must be started manually: WiFi.softAP(...)
 -   You must define the redirect page (`/` or custom path)
 -   Captive portal auto-opens mostly on mobile devices
-
+-   Call portal.begin(server) AFTER defining your routes:
+``` cpp
+server.on("/", ...);
+server.on("/home", ...);
+portal.begin(server);
+```
 ------------------------------------------------------------------------
 
 ## 📄 License
